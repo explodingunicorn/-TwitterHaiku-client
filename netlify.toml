@@ -1,8 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  from = "/api/*"
-  to = "http://twitter-haiku2.herokuapp.com/:splat"
-  status = 200
-  force = true  

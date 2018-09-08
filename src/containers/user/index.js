@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Column } from "components/layout";
-import UserInfo from "components/userInfo";
+import { Container, Row } from "components/layout";
 import HaikuCollection from "components/haikuCollection";
 import UserBanner from "./banner";
 import requests from "requests";
@@ -26,6 +25,7 @@ class User extends Component {
   async getUserData(userId) {
     const response = await requests.haikus.get("user", userId);
     console.log('response recieved');
+    console.log(response);
     if (response.haikus) {
       const { user, haikus } = response;
       this.setState({ user, haikus });
@@ -37,7 +37,7 @@ class User extends Component {
     const data = haikus.length > 0 ? { haikus } : {};
     return (
       <Container style={{ paddingTop: "120px" }} lg={65}>
-        {/* <UserBanner user={user} userName={this.props.match.params.id} /> */}
+        <UserBanner user={user} userName={this.props.match.params.id} />
         <Row>
           <HaikuCollection data={data} />
         </Row>

@@ -19,10 +19,10 @@ const HaikuCollection = ({ data }) => {
     <Row>
       {data.haikus
         ? data.haikus.map((haiku, i) => (
-            <Column key={i} lg={4}>
-              <Haiku haikuObj={haiku} />
-            </Column>
-          ))
+          <Column key={i} lg={4} md={6} sm={12}>
+            <Haiku haikuObj={haiku} />
+          </Column>
+        ))
         : renderPlaceholderHaikus()}
     </Row>
   );

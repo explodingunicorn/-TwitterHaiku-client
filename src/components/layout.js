@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "react-emotion";
-import { css } from "emotion";
 
 const Row = styled("div")`
   align-items: ${props => props.align + "!important" || "flex-start"};
@@ -36,12 +34,12 @@ const Column = styled("div")`
 
   @media (max-width: 768px) {
     width: ${props => {
-      return props.sm
-        ? getWidth(props.sm)
-        : props.md
-          ? getWidth(props.md)
-          : getWidth(props.lg);
-    }};
+    return props.sm
+      ? getWidth(props.sm)
+      : props.md
+        ? getWidth(props.md)
+        : getWidth(props.lg);
+  }};
   }
 `;
 
@@ -56,8 +54,8 @@ const Container = styled("div")`
 
   @media (max-width: 768px) {
     width: ${props => {
-      return props.sm ? props.sm : props.md ? props.md : props.lg;
-    }}%;
+    return props.sm ? props.sm : props.md ? props.md : props.lg;
+  }}%;
   }
 `;
 

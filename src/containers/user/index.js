@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Container, Row } from "components/layout";
+import { Row } from "components/layout";
+import SiteContainer from "containers/siteContainer";
 import HaikuCollection from "components/haikuCollection";
 import UserBanner from "./banner";
 import requests from "requests";
@@ -36,12 +37,12 @@ class User extends Component {
     const { user, haikus } = this.state;
     const data = haikus.length > 0 ? { haikus } : {};
     return (
-      <Container style={{ paddingTop: "120px" }} lg={65}>
+      <SiteContainer style={{ paddingTop: "120px" }}>
         <UserBanner user={user} userName={this.props.match.params.id} />
         <Row>
           <HaikuCollection data={data} />
         </Row>
-      </Container>
+      </SiteContainer>
     );
   }
 }

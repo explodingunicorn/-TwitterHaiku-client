@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "react-emotion";
 import colors from "styles/colors";
-import { Row, Spacer, Container, Column } from "components/layout";
+import { Row, Spacer, Column } from "components/layout";
+import SiteContainer from "containers/siteContainer";
 import TextLoader from "components/textLoader";
 
 const FixedBanner = styled("div")`
@@ -51,7 +52,7 @@ class UserBanner extends React.Component {
     const user = this.props.user;
     return (
       <FixedBanner>
-        <Container lg={65}>
+        <SiteContainer>
           <Row align="center" noMgn={true}>
             <Column lg={6}>
               <Row align="center" noMgn>
@@ -71,8 +72,8 @@ class UserBanner extends React.Component {
                   {user.haikus ? (
                     <h4>{user.haikus}</h4>
                   ) : (
-                    <TextLoader width={100} />
-                  )}
+                      <TextLoader width={100} />
+                    )}
                 </UserInfo>
                 <UserInfo>
                   <small>SENTIMENT:</small>
@@ -81,13 +82,13 @@ class UserBanner extends React.Component {
                       {this.getSentimentString(user.averageHaikuSentiment)}
                     </h4>
                   ) : (
-                    <TextLoader width={100} noMgn />
-                  )}
+                      <TextLoader width={100} noMgn />
+                    )}
                 </UserInfo>
               </Row>
             </Column>
           </Row>
-        </Container>
+        </SiteContainer>
       </FixedBanner>
     );
   }

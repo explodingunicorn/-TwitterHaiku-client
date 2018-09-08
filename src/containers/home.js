@@ -3,7 +3,8 @@ import fetchData from "components/fetchData";
 import HaikuCollection from "components/haikuCollection";
 import Input from "components/input";
 import Button from "components/button";
-import { Container, Row, Column, Spacer } from "components/layout";
+import { Row, Column, Spacer } from "components/layout";
+import SiteContainer from "containers/siteContainer";
 import Request from "requests";
 
 class Home extends React.Component {
@@ -18,9 +19,13 @@ class Home extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  goToUser = () => {
+    this.props.history.push('/user/' + this.state.user);
+  }
+
   render() {
     return (
-      <Container lg={60}>
+      <SiteContainer>
         <Row>
           <Spacer />
           <Column lg={8}>
@@ -31,7 +36,11 @@ class Home extends React.Component {
                 name="user"
                 onChange={this.onUserInput}
               />
-              <Button type="action" style={{ marginLeft: "10px" }}>
+              <Button
+                onClick={this.goToUser}
+                type="action"
+                style={{ marginLeft: "10px" }}
+              >
                 Go!
               </Button>
             </Row>
@@ -41,9 +50,8 @@ class Home extends React.Component {
         <Row>
           <h2>Recently found haikus</h2>
           <this.RecentHaikus />
-          <HaikuCollection data={{}} />
         </Row>
-      </Container>
+      </SiteContainer>
     );
   }
 }

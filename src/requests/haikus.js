@@ -2,7 +2,7 @@ import axios from "axios";
 
 const haikus = {
   get: (extension, id) => {
-    let route = "/haikus/";
+    let route = "/api/haikus/";
     if (extension) {
       route += extension + "/" + id;
     }

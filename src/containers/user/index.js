@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { css } from 'emotion';
 import { Row } from "components/layout";
 import SiteContainer from "containers/siteContainer";
 import HaikuCollection from "components/haikuCollection";
 import UserBanner from "./banner";
 import requests from "requests";
+
+const infoClass
 
 class User extends Component {
   constructor(props) {
@@ -38,6 +41,9 @@ class User extends Component {
     const data = haikus.length > 0 ? { haikus } : {};
     return (
       <SiteContainer style={{ paddingTop: "120px" }}>
+        <Container lg={100}>
+
+        </Container>
         <UserBanner user={user} userName={this.props.match.params.id} />
         <Row>
           <HaikuCollection data={data} />

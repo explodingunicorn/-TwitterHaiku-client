@@ -64,7 +64,7 @@ class UserBanner extends React.Component {
                 </h2>
               </Row>
             </Column>
-            <Column lg="6">
+            <Column lg={6}>
               <Row noMgn>
                 <Spacer />
                 <UserInfo>

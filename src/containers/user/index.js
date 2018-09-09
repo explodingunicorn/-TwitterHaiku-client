@@ -38,9 +38,6 @@ class User extends Component {
     const data = haikus.length > 0 ? { haikus } : {};
     return (
       <SiteContainer style={{ paddingTop: "120px" }}>
-        <Container lg={100}>
-
-        </Container>
         <UserBanner user={user} userName={this.props.match.params.id} />
         <Row>
           <HaikuCollection data={data} />

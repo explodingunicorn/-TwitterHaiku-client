@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { css } from 'emotion';
 import { Row } from "components/layout";
 import SiteContainer from "containers/siteContainer";
 import HaikuCollection from "components/haikuCollection";
 import UserBanner from "./banner";
 import requests from "requests";
-
-const infoClass
 
 class User extends Component {
   constructor(props) {
